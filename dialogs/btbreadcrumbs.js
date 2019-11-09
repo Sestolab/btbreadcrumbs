@@ -3,13 +3,11 @@ CKEDITOR.dialog.add('btbreadcrumbs', function(editor){
 		dialog = {
 			title: editor.lang.btbreadcrumbs.label,
 			onShow: function(){
-				var widget = editor.widgets.focused;
-
-				if (widget)
+				if (this.widget.data.items)
 					for (var i = 0; i < rows; i++)
-						if (widget.data.items[i]){
-							this.setValueOf('info', `txt${i}`, widget.data.items[i].txt);
-							this.setValueOf('info', `link${i}`, widget.data.items[i].link);
+						if (this.widget.data.items[i]){
+							this.setValueOf('info', `txt${i}`, this.widget.data.items[i].txt);
+							this.setValueOf('info', `link${i}`, this.widget.data.items[i].link);
 						}
 			},
 			onOk: function(){
