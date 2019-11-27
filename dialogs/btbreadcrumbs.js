@@ -11,15 +11,11 @@ CKEDITOR.dialog.add('btbreadcrumbs', function(editor){
 						}
 			},
 			onOk: function(){
-				var items = [];
-
 				for (var i = 0; i < rows; i++)
-					if (this.getValueOf('info', `txt${i}`))
-						items.push({
+						this.widget.pushData('items', this.getValueOf('info', `txt${i}`) && [{
 							txt: this.getValueOf('info', `txt${i}`),
-							link: this.getValueOf('info', `link${i}`),
-						});
-				this.widget.setData('items', items);
+							link: this.getValueOf('info', `link${i}`)
+						}], i == 0 ? true : null);
 			},
 
 			contents: [

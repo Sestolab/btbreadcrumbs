@@ -1,5 +1,5 @@
 CKEDITOR.plugins.add('btbreadcrumbs', {
-	requires: 'widget,dialog',
+	requires: 'widget,dialog,smethods',
 	lang: 'en,ru,uk',
 	icons: 'btbreadcrumbs',
 
@@ -16,18 +16,11 @@ CKEDITOR.plugins.add('btbreadcrumbs', {
 				return element.name == 'nav' && element.attributes['aria-label'] == 'breadcrumb';
 			},
 			init: function(){
-				var items = [];
-
-				if (!this.element.getElementsByTag('li'))
-					return;
-
-				for (const item of this.element.getElementsByTag('li').$)
-					items.push({
-						txt: item.textContent,
-						link: item.getElementsByTagName('a')[0] && item.getElementsByTagName('a')[0].getAttribute('href') || ''
-					});
-
-				this.setData('items', items);
+				for (const item of this.element.getElementsByTag('li').toArray())
+					this.pushData('items', [{
+							txt: item.getText(),
+							link: item.findOne('a') && item.findOne('a').getAttribute('href') || ''
+						}]);
 				this.on('dialog', function(evt){
 					evt.data.widget = this;
 				}, this);
