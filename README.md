@@ -8,7 +8,6 @@ https://sestolab.pp.ua/addons/CKEditor/btbreadcrumbs
 * [CKEditor](https://ckeditor.com/ckeditor-4) version 4.11.3 or greater
 * [Widget](https://ckeditor.com/cke4/addon/widget)
 * [Dialog](https://ckeditor.com/cke4/addon/dialog)
-* [SMethods](https://github.com/Sestolab/smethods)
 
 ## Browser Compatibility
 
@@ -30,3 +29,4 @@ config.extraPlugins = 'btbreadcrumbs';
 * Ukrainian
 
 Translations are welcome.
+

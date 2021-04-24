@@ -1,5 +1,7 @@
 CKEDITOR.plugins.setLang('btbreadcrumbs', 'uk', {
 	label: 'Хлібні крихти Bootstrap',
 	text: 'Текст',
-	link: 'Посилання'
+	link: 'Посилання',
+	addItem: 'Додати елемент'
 });
+

@@ -1,5 +1,7 @@
 CKEDITOR.plugins.setLang('btbreadcrumbs', 'en', {
 	label: 'Bootstrap Breadcrumbs',
 	text: 'Text',
-	link: 'Link'
+	link: 'Link',
+	addItem: 'Add Item'
 });
+
